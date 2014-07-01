@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>canvas tuts</title>
+    <title>gradients</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -27,16 +27,42 @@
         <h3 class="text-muted">canvas tuts</h3>
       </div><!--//header-->
 
-      <div id="main-content" class="row marketing">
-        <div class="col-lg-7 col-lg-offset-2">
-          <ul class="list-group">
-            <a href="canvas-basics.html" class="list-group-item">Lesson 2.1 Canvas Basics</a>
-            <a href="lines-rectangles.html" class="list-group-item">Lesson 2.2 Lines and Rectangles</a>
-            <a href="complex-shapes.html" class="list-group-item">Lesson 2.3 More Complex Shapes</a>
-            <a href="gradients.html" class="list-group-item">Lesson 2.3 Gradients</a>
-          </ul>
-        </div><!--//col-lg-10-->
-      </div><!--//row marketing-->
+      <div id="main-content" class="row">
+
+        <!-- CANVAS -->
+        <div class="col-xs-8">
+          <h2 class="text-muted">Gradients</h2>
+          <canvas id="canvas" width="380" height="520">
+            <p>Your browser does not support this content</p>
+          </canvas>
+        </div><!--//canvas-->
+
+        <!-- DEBUG -->
+        <div class="col-xs-4">
+          <h2 class="text-muted">Debug</h2>
+          <div class="canvas-debug-widget">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h4 class="panel-title">Position Offset</h4>
+              </div>
+              <div class="panel-body">
+                <table class="table table-striped">
+                  <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                  </tr>
+                  <tr>
+                    <td id="canvasX"></td>
+                    <td id="canvasY"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div><!--//debug-->
+
+      </div><!--//row-->
+
     </div><!--//container-->
 
 
@@ -57,6 +83,7 @@
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="scripts/gradients.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/bootstrap.js -->

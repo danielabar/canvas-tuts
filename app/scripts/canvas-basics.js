@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
 
   // Namespace to avoid collisions
@@ -23,4 +25,4 @@
 
   TP.init();
 
-}).call(this);
+})();

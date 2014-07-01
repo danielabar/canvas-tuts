@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
 
   // Namespace to avoid collisions
@@ -20,7 +22,7 @@
 
   TP.clearCanvas = function() {
     this.ctx.clearRect(0, 0, this.width, this.height);
-  }
+  };
 
   TP.drawTriangle = function(ctx) {
     ctx.beginPath();
@@ -52,7 +54,7 @@
     ctx.lineTo(this.width/2, this.height/2);
     ctx.closePath();
     this.setLineStyle(ctx, 5, '#006600');
-    this.fillShape(ctx, 'rgba(0, 128, 0, 0.5)') // red, green, blue, opacity or alpha number
+    this.fillShape(ctx, 'rgba(0, 128, 0, 0.5)'); // red, green, blue, opacity or alpha number
     ctx.stroke();
   };
 
@@ -70,4 +72,4 @@
 
   TP.init();
 
-}).call(this);
+})();

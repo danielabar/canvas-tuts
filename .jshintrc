@@ -19,9 +19,9 @@
     "smarttabs": true,
     "jquery": true,
     "predef": [  // Custom globals.
-        "Slider",
+        "TP",
         "google",
         "Handlebars",
-        "toastr"
+        "canvas"
     ]
 }
