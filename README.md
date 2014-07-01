@@ -25,3 +25,22 @@ Many canvas methods such as `moveTo` and `lineTo` don't do anything until you _c
 Lines that are joined together one after the other are referred to as a _path_
 
 If `moveTo` is used between lines, that breaks the path and creates different subpaths
+
+## Lines and Rectangles
+
+Lines can be ended in different styles:
+
+  ```javascript
+  var ctx = canvas.getContext('2d');
+  ctx.lineCap = 'butt';   //default
+  ctx.lineCap = 'round';
+  ctx.lineCap = 'square';
+  ```
+
+Lines can be joined in different styles:
+
+  ```javascript
+  ctx.lineJoin = 'miter';   // default
+  ctx.lineJoin = 'round';
+  ctx.lineJoin = 'bevel';
+  ```
