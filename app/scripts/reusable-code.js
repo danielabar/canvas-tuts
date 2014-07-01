@@ -13,6 +13,7 @@
     this.width = canvas.width;
     this.height = canvas.height;
 
+    // keep track of all the shapes on TP
     this.shapeList = [];
 
     canvas.onclick = function(e) {
@@ -20,6 +21,14 @@
       square.render();
       self.shapeList.push(square);
     };
+  };
+
+  // Clear out the entire canvas and re-render all the shapes
+  TP.render = function() {
+    this.ctx.clearRect(0, 0, this.width, this.height); // clear it out
+    for(var index in this.shapeList) {
+      this.shapeList[index].render();
+    }
   };
 
   TP.Square = function(x, y, size, ctx) {
