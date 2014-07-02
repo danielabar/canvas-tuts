@@ -44,3 +44,9 @@ Lines can be joined in different styles:
   ctx.lineJoin = 'round';
   ctx.lineJoin = 'bevel';
   ```
+
+## Video
+
+Unlike Image, cannot create a video element in pure JavaScript.
+The video tag must already exist in the html, then reference it from JavaScript.
+Open source video downloads [here](http://www.bigbuckbunny.org/index.php/download/)
