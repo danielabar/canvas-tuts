@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>canvas tuts</title>
+    <title>images</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,6 +18,7 @@
   <body>
 
     <div class="container">
+
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
@@ -27,20 +28,29 @@
         <h3 class="text-muted">canvas tuts</h3>
       </div><!--//header-->
 
-      <div id="main-content" class="row marketing">
-        <div class="col-lg-7 col-lg-offset-2">
-          <ul class="list-group">
-            <a href="canvas-basics.html" class="list-group-item">Lesson 2.1 Canvas Basics</a>
-            <a href="lines-rectangles.html" class="list-group-item">Lesson 2.2 Lines and Rectangles</a>
-            <a href="complex-shapes.html" class="list-group-item">Lesson 2.3 More Complex Shapes</a>
-            <a href="gradients.html" class="list-group-item">Lesson 2.3 Gradients</a>
-            <a href="reusable-code.html" class="list-group-item">Lesson 2.4 Reusable Code</a>
-            <a href="images.html" class="list-group-item">Lesson 3.1 Images</a>
-            <a href="images2.html" class="list-group-item">Images Exercise</a>
-            <a href="video.html" class="list-group-item">Lesson 3.2 Video</a>
-          </ul>
-        </div><!--//col-lg-10-->
-      </div><!--//row marketing-->
+      <div id="actions" class="row">
+        <div class="col-lg-12">
+          <div class="btn-toolbar">
+            <div class="btn-group">
+              <button id="greyScale" type="button" class="btn btn-default">
+                <i class="fa fa-bullseye"></i>
+              </button>
+              <button id="inverse" type="button" class="btn btn-default">
+                <i class="fa fa-random"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="main-content" class="row">
+        <div class="col-lg-12">
+          <canvas id="canvas" width="380" height="550">
+            <p>Your browser does not support this content</p>
+          </canvas>
+        </div>
+      </div><!--//row-->
+
     </div><!--//container-->
 
 
@@ -61,6 +71,7 @@
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="scripts/images2.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/bootstrap.js -->
