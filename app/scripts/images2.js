@@ -31,6 +31,9 @@
     $('#greyScale').on('click', function() {
       self.toGreyScale(self.ctx);
     });
+    $('#inverse').on('click', function() {
+      self.inverse(self.ctx);
+    });
     $('#reset').on('click', function() {
       self.renderImage(self.ctx, self.imageObj);
     });
@@ -41,7 +44,6 @@
   };
 
   TP.toGreyScale = function(ctx) {
-    // hard coding image dimensions for now
     var imageData = ctx.getImageData(10, 10, 350, 520);
     var data = imageData.data;
     for(var i=0; i<data.length; i +=4) {
@@ -49,6 +51,17 @@
       data[i] = brightness;     // red
       data[i+1] = brightness;   // green
       data[i+2] = brightness;   // blue
+    }
+    ctx.putImageData(imageData, 10, 10);
+  };
+
+  TP.inverse = function(ctx) {
+    var imageData = ctx.getImageData(10, 10, 350, 520);
+    var data = imageData.data;
+    for(var i=0; i<data.length; i +=4) {
+      data[i] = 255 - data[i];        // red
+      data[i+1] = 255 - data[i+1];    // green
+      data[i+2] = 255 - data[i+2];    // blue
     }
     ctx.putImageData(imageData, 10, 10);
   };
