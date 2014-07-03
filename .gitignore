@@ -26,7 +26,6 @@ Thumbs.db
 .idea
 
 node_modules
-dist
 .tmp
 app/bower_components
 .sass-cache
