@@ -31,6 +31,9 @@
     $('#greyScale').on('click', function() {
       self.toGreyScale(self.ctx);
     });
+    $('#reset').on('click', function() {
+      self.renderImage(self.ctx, self.imageObj);
+    });
   };
 
   TP.renderImage = function(ctx, imageObj) {
