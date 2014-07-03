@@ -37,6 +37,9 @@
     $('#reset').on('click', function() {
       self.renderImage(self.ctx, self.imageObj);
     });
+    $('#download').on('click', function() {
+      $(this).attr('href', self.canvas.toDataURL());
+    });
   };
 
   TP.renderImage = function(ctx, imageObj) {
