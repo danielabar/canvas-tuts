@@ -32,11 +32,14 @@
         <div class="col-lg-12">
           <div class="btn-toolbar">
             <div class="btn-group">
-              <button id="greyScale" type="button" class="btn btn-default">
+              <button id="greyScale" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="greyscale">
                 <i class="fa fa-bullseye"></i>
               </button>
-              <button id="inverse" type="button" class="btn btn-default">
+              <button id="inverse" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="inverse">
                 <i class="fa fa-random"></i>
+              </button>
+              <button id="reset" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="reset">
+                <i class="fa fa-undo"></i>
               </button>
             </div>
           </div>
@@ -71,7 +74,6 @@
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
-        <script src="scripts/images2.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/vendor/bootstrap.js -->
@@ -88,5 +90,7 @@
         <script src="bower_components/bootstrap/js/collapse.js"></script>
         <script src="bower_components/bootstrap/js/tab.js"></script>
         <!-- endbuild -->
+
+        <script src="scripts/images2.js"></script>
 </body>
 </html>

@@ -13,7 +13,14 @@
     this.height = canvas.height;
     this.imageObj = new Image();
     this.imageObj.src = 'images/butterfly.jpg';
+    this.registerToolTips();
     this.registerEvents();
+  };
+
+  TP.registerToolTips = function() {
+    $('.action').tooltip({
+      container: 'body'
+    });
   };
 
   TP.registerEvents = function() {
