@@ -165,7 +165,17 @@ module.exports = function (grunt) {
       }
     },
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: [
+        '<%= yeoman.app %>/index.html',
+        '<%= yeoman.app %>/canvas-basics.html',
+        '<%= yeoman.app %>/complex-shapes.html',
+        '<%= yeoman.app %>/gradients.html',
+        '<%= yeoman.app %>/images.html',
+        '<%= yeoman.app %>/images2.html',
+        '<%= yeoman.app %>/reusable-code.html',
+        '<%= yeoman.app %>/video.html',
+        '<%= yeoman.app %>/lines-rectangles.html'
+      ],
       options: {
         dest: '<%= yeoman.dist %>'
       }
