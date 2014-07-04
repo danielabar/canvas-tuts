@@ -41,9 +41,6 @@
               <button id="reset" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="reset">
                 <i class="fa fa-undo"></i>
               </button>
-              <!-- <button id="download" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="download">
-                <i class="fa fa-download"></i>
-              </button> -->
               <a id="download" href="#" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="download" download>
                 <i class="fa fa-download"></i>
               </a>
@@ -57,6 +54,9 @@
           <canvas id="canvas" width="380" height="550">
             <p>Your browser does not support this content</p>
           </canvas>
+        </div>
+        <div id="imageLoc" class="hide">
+          <img src="images/butterfly.jpg" alt="butterfly">
         </div>
       </div><!--//row-->
 
@@ -80,10 +80,6 @@
 
         <!-- build:js scripts/images2.js -->
         <script src="bower_components/jquery/jquery.js"></script>
-        <script src="scripts/images2.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js scripts/vendor/bootstrap.js -->
         <script src="bower_components/bootstrap/js/affix.js"></script>
         <script src="bower_components/bootstrap/js/alert.js"></script>
         <script src="bower_components/bootstrap/js/dropdown.js"></script>
@@ -96,7 +92,9 @@
         <script src="bower_components/bootstrap/js/scrollspy.js"></script>
         <script src="bower_components/bootstrap/js/collapse.js"></script>
         <script src="bower_components/bootstrap/js/tab.js"></script>
+        <script src="scripts/images2.js"></script>
         <!-- endbuild -->
+
 
 </body>
 </html>

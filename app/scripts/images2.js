@@ -12,7 +12,7 @@
     this.width = canvas.width;
     this.height = canvas.height;
     this.imageObj = new Image();
-    this.imageObj.src = 'images/butterfly.jpg';
+    this.imageObj.src = $('#imageLoc img').attr('src');
     this.registerToolTips();
     this.registerEvents();
   };
