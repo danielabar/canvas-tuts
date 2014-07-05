@@ -47,6 +47,12 @@ Lines can be joined in different styles:
 
 ## Video
 
-Unlike Image, cannot create a video element in pure JavaScript.
-The video tag must already exist in the html, then reference it from JavaScript.
+Unlike Image, cannot create a video element in pure JavaScript. Need to create video tag dom node.
 Open source video downloads [here](http://www.bigbuckbunny.org/index.php/download/)
+
+## Audio
+
+Unlike image and video data which is available as array once rendered on canvas, audio data is more primitive.
+Need to use [Web Audio API](http://webaudio.github.io/web-audio-api/)
+
+Royalty free music downloads [here](http://incompetech.com/music/royalty-free/?keywords=rising+ethereal&Search=Search)

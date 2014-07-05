@@ -9,7 +9,7 @@
     "immed": true,
     "indent": 2,
     "latedef": true,
-    "newcap": true,
+    "newcap": false,
     "noarg": true,
     "quotmark": "single",
     "undef": true,
@@ -22,6 +22,7 @@
         "TP",
         "google",
         "Handlebars",
-        "canvas"
+        "canvas",
+        "webkitAudioContext"
     ]
 }
