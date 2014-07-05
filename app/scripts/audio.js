@@ -23,27 +23,27 @@
     var audioCtx = new webkitAudioContext();
 
     // access to waveform spectrum data
-    var analyser = audioCtx.createAnalyser();
+    this.analyser = audioCtx.createAnalyser();
 
     var source = audioCtx.createMediaElementSource(audioElement);
 
     // hook up audio equipment
-    source.connect(analyser);
-    analyser.connect(audioCtx.destination);
+    source.connect(this.analyser);
+    this.analyser.connect(audioCtx.destination);
 
     // visualize it
     setInterval(function() {
-      self.draw(analyser);
+      self.draw();
     }, 33);
   };
 
-  TP.draw = function(analyser) {
+  TP.draw = function() {
 
     // create empty array of 8-bit characters, works well with storing frequency data
-    var freqData = new Uint8Array(analyser.frequencyBinCount);
+    var freqData = new Uint8Array(this.analyser.frequencyBinCount);
 
     // populate frequency data array
-    analyser.getByteFrequencyData(freqData);
+    this.analyser.getByteFrequencyData(freqData);
 
     // clear the canvas
     this.ctx.clearRect(0, 0, this.width, this.height);
