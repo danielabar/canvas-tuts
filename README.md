@@ -6,6 +6,7 @@ Canvas [reference](http://www.w3schools.com/tags/ref_canvas.asp)
 
 ## Introduction
 
+
 Canvas element is bitmap surface that can be manipulated with a JavaScript API. Think of it as a drawing surface.
 
 Once its drawn on, it remains like that until cleared or drawn over. It's just pixels.
@@ -56,3 +57,26 @@ Unlike image and video data which is available as array once rendered on canvas,
 Need to use [Web Audio API](http://webaudio.github.io/web-audio-api/)
 
 Royalty free music downloads [here](http://incompetech.com/music/royalty-free/?keywords=rising+ethereal&Search=Search)
+
+### Development
+
+  ```
+  grunt serve
+  ```
+
+### Build
+
+  ```
+  grunt build
+  grunt connect:dist:keepalive
+  ```
+
+Make sure optimized version of site is working locally.
+
+### Deploy
+
+Push changes to master, then:
+
+  ```
+  git subtree push --prefix dist origin gh-pages
+  ```
