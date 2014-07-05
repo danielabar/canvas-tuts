@@ -174,7 +174,8 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/images2.html',
         '<%= yeoman.app %>/reusable-code.html',
         '<%= yeoman.app %>/video.html',
-        '<%= yeoman.app %>/lines-rectangles.html'
+        '<%= yeoman.app %>/lines-rectangles.html',
+        '<%= yeoman.app %>/audio.html'
       ],
       options: {
         dest: '<%= yeoman.dist %>'
@@ -249,7 +250,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'fonts/{,*/}*.*',
             '.htaccess',
-            'images/{,*/}*.{webp,gif}'
+            'images/{,*/}*.{webp,gif}',
+            'audio/*.mp3'
           ]
         }]
       },
