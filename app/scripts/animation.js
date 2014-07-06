@@ -79,6 +79,8 @@
     this.size = size;
     this.ctx = ctx;
     this.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+    this.xdirection = 'left';
+    this.ydirection = 'up';
   };
 
   TP.Square.prototype.move = function(newX, newY) {
@@ -98,14 +100,108 @@
   // Set a new x and y position, then call render
   TP.Square.prototype.animate = function() {
     // each time animate is called, square will move up and to the left
-    var newPos = this.calculateNextPosition(this.x, this.y, TP.canvas.width, TP.canvas.height);
+    // var newPos = this.comeBackTheOtherSide(this.x, this.y, TP.canvas.width, TP.canvas.height);
+    var newPos = this.bounceBack(this.x, this.y, TP.canvas.width, TP.canvas.height);
     // this.move(this.x-1, this.y-1);
     this.move(newPos.x, newPos.y);
     this.render();
   };
 
-  // Experiment
-  TP.Square.prototype.calculateNextPosition = function(curX, curY, canvasW, canvasH) {
+  TP.Square.prototype.bounceBack = function(curX, curY, canvasW, canvasH) {
+
+    var newX;
+    var newY;
+
+    // top left corner
+    if (curX === 0 && curY === 0) {
+      this.ydirection = 'down';
+      this.xdirection = 'right';
+      return {x: curX + 1, y: curY + 1 };
+    }
+
+    // top right corner
+    if (curX === canvasW && curY === 0) {
+      this.ydirection = 'down';
+      this.xdirection = 'left';
+      return {x: curX - 1, y: curY + 1 };
+    }
+
+    // bottom left corner
+    if (curX === 0 && curY === canvasH) {
+      this.ydirection = 'up';
+      this.xdirection = 'right';
+      return {x: curX + 1, y: curY - 1 };
+    }
+
+    // bottom right corner
+    if (curX === canvasW && curY === canvasH) {
+      this.ydirection = 'up';
+      this.xdirection = 'left';
+      return {x: curX - 1, y: curY - 1 };
+    }
+
+    // left edge
+    if (curX === 0) {
+      newX = curX + 1;
+      this.xdirection = 'right';
+      if (this.ydirection === 'up') {
+        newY = curY + 1;
+      } else {
+        newY = curY - 1;
+      }
+      return {x: newX, y: newY};
+    }
+
+    // right edge
+    if (curX === canvasW) {
+      newX = curX - 1;
+      this.xdirection = 'left';
+      if (this.ydirection === 'up') {
+        newY = curY + 1;
+        // this.ydirection = 'down';
+      } else {
+        newY = curY - 1;
+        // this.ydirection = 'up';
+      }
+      return {x: newX, y: newY};
+    }
+
+    // top edge
+    if (curY === 0) {
+      newY = curY + 1;
+      this.ydirection = 'bottom';
+      if (this.xdirection === 'left') {
+        newX = curX + 1;
+        // this.xdirection = 'right';
+      } else {
+        newX = curX - 1;
+        // this.xdirection = 'left';
+      }
+      return {x: newX, y: newY};
+    }
+
+    // bottom edge
+    if (curY === canvasH) {
+      newY = curY - 1;
+      this.ydirection = 'up';
+      if (this.xdirection === 'left') {
+        newX = curX + 1;
+        // this.xdirection = 'right';
+      } else {
+        newX = curX - 1;
+        // this.xdirection = 'left';
+      }
+      return {x: newX, y: newY};
+    }
+
+    // anywhere else
+    newX = (this.xdirection === 'left') ? curX-1 : curX+1;
+    newY = (this.ydirection === 'up') ? curY-1 : curY+1;
+    return {x: newX, y: newY};
+
+  };
+
+  TP.Square.prototype.comeBackTheOtherSide = function(curX, curY, canvasW, canvasH) {
     var newX;
     var newY;
     newX = (curX-1 < 0) ? canvasW : curX-1;
