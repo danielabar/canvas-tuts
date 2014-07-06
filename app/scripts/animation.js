@@ -5,8 +5,6 @@
   window.TP = {};
 
   TP.init = function() {
-    var self = this;
-
     this.canvas = document.getElementById('canvas');
     this.ctx = canvas.getContext('2d');
     this.width = canvas.width;
@@ -20,12 +18,6 @@
     // keep track of all the shapes on TP
     this.shapeList = [];
 
-    this.canvas.onclick = function(e) {
-      var square = new TP.Square(e.offsetX, e.offsetY, 40, self.ctx);
-      square.render();
-      self.shapeList.push(square);
-    };
-
     // start animation
     this.animate();
   };
@@ -38,6 +30,11 @@
 
   TP.registerHandlers = function() {
     var self = this;
+    this.canvas.onclick = function(e) {
+      var square = new TP.Square(e.offsetX, e.offsetY, 40, self.ctx);
+      square.render();
+      self.shapeList.push(square);
+    };
     $('#pause').on('click', function() {
       self.pause();
     });
