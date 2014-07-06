@@ -176,7 +176,8 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/video.html',
         '<%= yeoman.app %>/lines-rectangles.html',
         '<%= yeoman.app %>/audio.html',
-        '<%= yeoman.app %>/transforms.html'
+        '<%= yeoman.app %>/transforms.html',
+        '<%= yeoman.app %>/composites.html'
       ],
       options: {
         dest: '<%= yeoman.dist %>'

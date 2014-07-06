@@ -76,6 +76,20 @@ Calling `restore` given a stack of saved states, effectively pops off the last s
 
 To mirror an object, set the `scale` to `-1` in the direction you want to mirror in.
 
+## Composites
+
+Clipping areas: not drawing outside the lines
+
+`ctx.globalCompositeOperation` by default is `source-over`
+
+Source refers to last added pixel, Destination refers to what is already on the canvas
+
+Some operations eliminate entirety of destination (i.e. whatever is already on the canvas).
+If that's not what you want, then create secondary context to put shapes together, then read image data from the secondary context,
+and put image data onto original canvas.
+
+`ctx.globalAlpha` affects transparency of composite area, including ligher and darker option.
+
 ### Development
 
   ```
