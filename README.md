@@ -58,6 +58,24 @@ Need to use [Web Audio API](http://webaudio.github.io/web-audio-api/)
 
 Royalty free music downloads [here](http://incompetech.com/music/royalty-free/?keywords=rising+ethereal&Search=Search)
 
+## Transforms
+
+Order of rate and translate changes results.
+
+`save` and `restore` methods of context actually create an array of contexts, but not accessible like normal array.
+
+Each time `save` is called, the context gets pushed onto the stack of saved states.
+
+Calling `restore` given a stack of saved states, effectively pops off the last saved context, and restores to the previous one.
+
+`context.transform` method takes 6 parameters and is based on [matrix theory](http://en.wikipedia.org/wiki/Matrix_(mathematics))
+
+`context.setTransform` resets canvas, then applies transform, useful if `save` was called previously and want to clear that.
+
+`setTransform` can also be used to rest by calling `context.setTransform(1, 0, 0, 1, 0, 0)`
+
+To mirror an object, set the `scale` to `-1` in the direction you want to mirror in.
+
 ### Development
 
   ```
