@@ -9,6 +9,8 @@
     this.ctx = canvas.getContext('2d');
     this.width = canvas.width;
     this.height = canvas.height;
+    this.isDrawing = false;
+    this.interval = 33;
     this.registerToolTips();
     this.setupAudio();
     this.registerHandlers();
@@ -28,7 +30,7 @@
     $('#stopvisualize').on('click', function() {
       self.stopVisualize();
     });
-    $('#ex1').slider({
+    $('#interval').slider({
       formater: function(value) {
         return 'Current value: ' + value;
       }
@@ -37,15 +39,17 @@
 
   TP.startVisualize = function() {
     var self = this;
-    if (!this.refreshIntervalId) {
+    if (!this.isDrawing) {
+      this.isDrawing = true;
       this.refreshIntervalId = setInterval(function() {
         self.draw();
-      }, 33);
+      }, self.interval);
     }
   };
 
   TP.stopVisualize = function() {
-    if (this.refreshIntervalId) {
+    if (this.isDrawing) {
+      this.isDrawing = false;
       clearInterval(this.refreshIntervalId);
     }
   };
