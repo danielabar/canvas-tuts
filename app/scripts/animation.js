@@ -11,6 +11,8 @@
     this.ctx = canvas.getContext('2d');
     this.width = canvas.width;
     this.height = canvas.height;
+    this.registerToolTips();
+    this.registerHandlers();
 
     // keep track of animation
     this.animId = null;
@@ -18,7 +20,7 @@
     // keep track of all the shapes on TP
     this.shapeList = [];
 
-    canvas.onclick = function(e) {
+    this.canvas.onclick = function(e) {
       var square = new TP.Square(e.offsetX, e.offsetY, 40, self.ctx);
       square.render();
       self.shapeList.push(square);
@@ -26,6 +28,36 @@
 
     // start animation
     this.animate();
+  };
+
+  TP.registerToolTips = function() {
+    $('.action').tooltip({
+      container: 'body'
+    });
+  };
+
+  TP.registerHandlers = function() {
+    var self = this;
+    $('#pause').on('click', function() {
+      self.pause();
+    });
+    $('#play').on('click', function() {
+      self.play();
+    });
+  };
+
+  TP.pause = function() {
+    cancelAnimationFrame(this.animId);
+    this.animId = null;
+  };
+
+  TP.play = function() {
+    var self = this;
+    if (!this.animId) {
+      this.animId = requestAnimationFrame(function() {
+        self.animate();
+      });
+    }
   };
 
   TP.animate = function() {

@@ -24,6 +24,7 @@
         "Handlebars",
         "canvas",
         "webkitAudioContext",
-        "requestAnimationFrame"
+        "requestAnimationFrame",
+        "cancelAnimationFrame"
     ]
 }
