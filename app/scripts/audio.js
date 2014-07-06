@@ -32,9 +32,16 @@
     });
     $('#interval').slider({
       formater: function(value) {
-        return 'Current value: ' + value;
+        self.setInterval(value);
+        return 'Refresh interval: ' + value;
       }
     });
+  };
+
+  TP.setInterval = function(value) {
+    this.interval = value;
+    this.stopVisualize();
+    this.startVisualize();
   };
 
   TP.startVisualize = function() {
