@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css">
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -28,6 +29,11 @@
       <div class="row">
         <div class="col-lg-12">
           <audio id="audio" src="audio/Rising.mp3" preload controls></audio>
+        </div>
+      </div><!--//audio-->
+
+      <div class="row">
+        <div class="col-lg-12">
             <div id="actions" class="btn-group">
               <button id="startvisualize" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="start visualization">
                 <i class="fa fa-film"></i>
@@ -37,7 +43,13 @@
               </button>
             </div>
         </div>
-      </div><!--//audio-->
+      </div><!--//actions-->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+        </div>
+      </div>
 
       <div class="row">
         <div class="col-lg-12">
@@ -46,6 +58,7 @@
           </canvas>
         </div>
       </div><!--//canvas-->
+
 
     </div><!--//container-->
 
@@ -68,6 +81,7 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/bootstrap/js/tooltip.js"></script>
         <script src="bower_components/bootstrap/js/popover.js"></script>
+        <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
         <script src="scripts/audio.js"></script>
         <!-- endbuild -->
 

@@ -28,6 +28,11 @@
     $('#stopvisualize').on('click', function() {
       self.stopVisualize();
     });
+    $('#ex1').slider({
+      formater: function(value) {
+        return 'Current value: ' + value;
+      }
+    });
   };
 
   TP.startVisualize = function() {
