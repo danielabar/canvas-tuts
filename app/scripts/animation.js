@@ -98,8 +98,22 @@
   // Set a new x and y position, then call render
   TP.Square.prototype.animate = function() {
     // each time animate is called, square will move up and to the left
-    this.move(this.x-1, this.y-1);
+    var newPos = this.calculateNextPosition(this.x, this.y, TP.canvas.width, TP.canvas.height);
+    // this.move(this.x-1, this.y-1);
+    this.move(newPos.x, newPos.y);
     this.render();
+  };
+
+  // Experiment
+  TP.Square.prototype.calculateNextPosition = function(curX, curY, canvasW, canvasH) {
+    var newX;
+    var newY;
+    newX = (curX-1 < 0) ? canvasW : curX-1;
+    newY = (curY-1 < 0) ? canvasH : curY-1;
+    return {
+      x: newX,
+      y: newY
+    };
   };
 
   TP.init();
