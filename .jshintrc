@@ -23,6 +23,7 @@
         "google",
         "Handlebars",
         "canvas",
-        "webkitAudioContext"
+        "webkitAudioContext",
+        "requestAnimationFrame"
     ]
 }

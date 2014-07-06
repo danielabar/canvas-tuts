@@ -90,6 +90,15 @@ and put image data onto original canvas.
 
 `ctx.globalAlpha` affects transparency of composite area, including ligher and darker option.
 
+## Animation
+
+Instead of [setInterval](https://developer.mozilla.org/en/docs/Web/API/window.setInterval), use [window.requestAnimationFrame](https://developer.mozilla.org/en/docs/Web/API/window.requestAnimationFrame)
+because it's more efficient and has extra features like pausing when browser loses focus.
+
+But requestAnimationFrame is not fully supported in all [browsers](http://caniuse.com/requestanimationframe),
+therefore use a [polyfill](https://gist.github.com/paulirish/1579671)
+
+
 ### Development
 
   ```
