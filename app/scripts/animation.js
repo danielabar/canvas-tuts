@@ -96,13 +96,8 @@
     this.ctx.fill();
   };
 
-  // Each square is responsible for its own animation
-  // Set a new x and y position, then call render
   TP.Square.prototype.animate = function() {
-    // each time animate is called, square will move up and to the left
-    // var newPos = this.comeBackTheOtherSide(this.x, this.y, TP.canvas.width, TP.canvas.height);
     var newPos = this.bounceBack(this.x, this.y, TP.canvas.width, TP.canvas.height);
-    // this.move(this.x-1, this.y-1);
     this.move(newPos.x, newPos.y);
     this.render();
   };
@@ -143,54 +138,32 @@
     // left edge
     if (curX === 0) {
       newX = curX + 1;
+      newY = (this.ydirection === 'up') ? curY + 1 : curY - 1;
       this.xdirection = 'right';
-      if (this.ydirection === 'up') {
-        newY = curY + 1;
-      } else {
-        newY = curY - 1;
-      }
       return {x: newX, y: newY};
     }
 
     // right edge
     if (curX === canvasW) {
       newX = curX - 1;
+      newY = (this.ydirection === 'up') ? curY + 1 : curY - 1;
       this.xdirection = 'left';
-      if (this.ydirection === 'up') {
-        newY = curY + 1;
-        // this.ydirection = 'down';
-      } else {
-        newY = curY - 1;
-        // this.ydirection = 'up';
-      }
       return {x: newX, y: newY};
     }
 
     // top edge
     if (curY === 0) {
       newY = curY + 1;
+      newX = (this.xdirection === 'left') ? curX + 1 : curX - 1;
       this.ydirection = 'bottom';
-      if (this.xdirection === 'left') {
-        newX = curX + 1;
-        // this.xdirection = 'right';
-      } else {
-        newX = curX - 1;
-        // this.xdirection = 'left';
-      }
       return {x: newX, y: newY};
     }
 
     // bottom edge
     if (curY === canvasH) {
       newY = curY - 1;
+      newX = (this.xdirection === 'left') ? curX + 1 : curX - 1;
       this.ydirection = 'up';
-      if (this.xdirection === 'left') {
-        newX = curX + 1;
-        // this.xdirection = 'right';
-      } else {
-        newX = curX - 1;
-        // this.xdirection = 'left';
-      }
       return {x: newX, y: newY};
     }
 
