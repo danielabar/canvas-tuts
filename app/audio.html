@@ -18,25 +18,36 @@
   <body>
 
     <div class="container">
+
       <div class="row">
         <div class="col-lg-12">
           <h2 class="text-muted">Audio</h2>
         </div>
-      </div>
+      </div><!--//header-->
+
       <div class="row">
         <div class="col-lg-12">
           <audio id="audio" src="audio/Rising.mp3" preload controls></audio>
-          <button id="start" type="button" class="btn btn-primary">Start</button>
+            <div id="actions" class="btn-group">
+              <button id="startvisualize" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="start visualization">
+                <i class="fa fa-film"></i>
+              </button>
+              <button id="stopvisualize" type="button" class="btn btn-default action" data-toggle="tooltip" data-placement="top" title="stop visualization">
+                <i class="fa fa-square"></i>
+              </button>
+            </div>
         </div>
-      </div>
+      </div><!--//audio-->
+
       <div class="row">
         <div class="col-lg-12">
           <canvas id="canvas" width="380" height="520">
             <p>Your browser does not support this content</p>
           </canvas>
         </div>
-      </div>
-    </div>
+      </div><!--//canvas-->
+
+    </div><!--//container-->
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -55,22 +66,10 @@
 
         <!-- build:js scripts/audio.js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/bootstrap/js/popover.js"></script>
         <script src="scripts/audio.js"></script>
         <!-- endbuild -->
 
-        <!-- build:js scripts/vendor/bootstrap.js -->
-        <script src="bower_components/bootstrap/js/affix.js"></script>
-        <script src="bower_components/bootstrap/js/alert.js"></script>
-        <script src="bower_components/bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/bootstrap/js/modal.js"></script>
-        <script src="bower_components/bootstrap/js/transition.js"></script>
-        <script src="bower_components/bootstrap/js/button.js"></script>
-        <script src="bower_components/bootstrap/js/popover.js"></script>
-        <script src="bower_components/bootstrap/js/carousel.js"></script>
-        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/bootstrap/js/collapse.js"></script>
-        <script src="bower_components/bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
 </body>
 </html>

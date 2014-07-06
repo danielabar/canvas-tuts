@@ -9,13 +9,44 @@
     this.ctx = canvas.getContext('2d');
     this.width = canvas.width;
     this.height = canvas.height;
+    this.registerToolTips();
     this.setupAudio();
+    this.registerHandlers();
+  };
+
+  TP.registerToolTips = function() {
+    $('.action').tooltip({
+      container: 'body'
+    });
+  };
+
+  TP.registerHandlers = function() {
+    var self = this;
+    $('#startvisualize').on('click', function() {
+      self.startVisualize();
+    });
+    $('#stopvisualize').on('click', function() {
+      self.stopVisualize();
+    });
+  };
+
+  TP.startVisualize = function() {
+    var self = this;
+    if (!this.refreshIntervalId) {
+      this.refreshIntervalId = setInterval(function() {
+        self.draw();
+      }, 33);
+    }
+  };
+
+  TP.stopVisualize = function() {
+    if (this.refreshIntervalId) {
+      clearInterval(this.refreshIntervalId);
+    }
   };
 
   // Reference: https://github.com/mdn/voice-change-o-matic/blob/gh-pages/scripts/app.js#L128-L205
   TP.setupAudio = function() {
-    var self = this;
-
     // audio html element has reference to mp3 source
     var audioElement = document.getElementById('audio');
 
@@ -30,11 +61,6 @@
     // hook up audio equipment
     source.connect(this.analyser);
     this.analyser.connect(audioCtx.destination);
-
-    // visualize it
-    setInterval(function() {
-      self.draw();
-    }, 33);
   };
 
   TP.draw = function() {
