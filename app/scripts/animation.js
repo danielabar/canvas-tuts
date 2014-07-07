@@ -27,6 +27,7 @@
   };
 
   TP.registerToolTips = function() {
+    var self = this;
     $('.action').tooltip({
       container: 'body'
     });
