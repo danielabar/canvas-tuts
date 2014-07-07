@@ -12,6 +12,10 @@
     this.registerToolTips();
     this.registerHandlers();
 
+    // global context properties
+    this.ctx.globalCompositeOperation = 'darker';
+    this.ctx.globalAlpha = 0.9;
+
     // keep track of animation
     this.animId = null;
 
