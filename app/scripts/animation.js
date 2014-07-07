@@ -30,6 +30,9 @@
     $('.action').tooltip({
       container: 'body'
     });
+    $('#download').on('click', function() {
+      $(this).attr('href', self.canvas.toDataURL());
+    });
   };
 
   TP.registerHandlers = function() {
