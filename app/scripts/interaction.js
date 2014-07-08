@@ -37,8 +37,8 @@
 
   TP.startDrag = function(e) {
     var self = this;
-
     var shapes = this.getShapesAtXY(e.offsetX, e.offsetY);
+
     // mark the last element in the array the 'selected' one
     if (shapes.length > 0) {
       var selectedShape = shapes[shapes.length-1];
@@ -58,6 +58,7 @@
       this.canvas.addEventListener('mousemove', this.moveHandler, false);
       this.canvas.addEventListener('mouseup', this.upHandler, false);
     }
+    this.render();
   };
 
   TP.dragShape = function(shape, x, y) {
@@ -66,13 +67,12 @@
     this.render();   // re-render entire canvas
   };
 
+  // cancel the mouse listeners
   TP.stopDrag = function(shape) {
     shape.selected = false;
-    shape.render();
-
-    // cancel the mouse listeners
     this.canvas.removeEventListener('mousemove', this.moveHandler, false);
     this.canvas.removeEventListener('mouseup', this.upHandler, false);
+    this.render();
   };
 
   // Given a point on the canvas, determine which suares are overlapping it
@@ -116,17 +116,13 @@
     this.ctx.beginPath();
     this.ctx.rect(this.x, this.y, this.size, this.size);
     this.ctx.closePath();
-    this.ctx.fillStyle = this.color;
-    this.ctx.fill();
-    this.renderSelected();
-  };
-
-  TP.Square.prototype.renderSelected = function() {
     if (this.selected) {
       this.ctx.strokeStyle = '#FF0000';
       this.ctx.lineWidth = 8;
       this.ctx.stroke();
     }
+    this.ctx.fillStyle = this.color;
+    this.ctx.fill();
   };
 
   TP.init();
