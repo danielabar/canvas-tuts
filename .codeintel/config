@@ -1,0 +1,7 @@
+{
+  "JavaScript": {
+    "javascriptExtraPaths": [
+      'app/bower_components/kineticjs/kinetic.js'
+    ]
+  }
+}

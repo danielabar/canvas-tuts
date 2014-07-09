@@ -114,6 +114,10 @@ Kinetic has Animation class, so no need to call RequestAnimationFrame or polyfil
 
 Each layer represents two canvas elements, one for presenting content, and the other for handling events.
 
+Give each shape an id so it can be referenced later.
+
+A Group acts like a container for display objects.
+
 
 ### Development
 
