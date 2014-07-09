@@ -98,6 +98,22 @@ because it's more efficient and has extra features like pausing when browser los
 But requestAnimationFrame is not fully supported in all [browsers](http://caniuse.com/requestanimationframe),
 therefore use a [polyfill](https://gist.github.com/paulirish/1579671)
 
+## Frameworks
+
+[Kineticjs](http://kineticjs.com/) [Docs](http://kineticjs.com/docs/)
+
+  ```bower install kineticjs```
+
+Top level is a `stage`. Stage can have layers. Layers can have Shapes and/or Groups.
+
+Stage has `draw()` method, that will search through layers and call their draw methods.
+
+Layer keeps track of all the objects in it.
+
+Kinetic has Animation class, so no need to call RequestAnimationFrame or polyfills, all handled by Kinetic.
+
+Each layer represents two canvas elements, one for presenting content, and the other for handling events.
+
 
 ### Development
 
