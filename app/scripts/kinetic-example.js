@@ -21,6 +21,10 @@
     this.stage.add(this.backLayer);
     this.stage.add(this.frontLayer);
 
+    // Handle so we can start/stop animation
+    this.anim = null;
+    this.animating = false;
+
     this.draw();
   };
 
@@ -83,12 +87,21 @@
     // http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-rotation-animation-tutorial/
     var self = this;
     var angularSpeed = 360 / 4;
-    var anim = new Kinetic.Animation(function(frame) {
+    this.anim = new Kinetic.Animation(function(frame) {
       var angleDiff = frame.timeDiff * angularSpeed / 1000;
       blueRect.rotate(angleDiff);
     }, self.backLayer);
 
-    anim.start();
+    // toggle animation
+    blueRect.on('click', function() {
+      if (self.animating) {
+        self.animating = false;
+        self.anim.stop();
+      } else {
+        self.animating = true;
+        self.anim.start();
+      }
+    });
   };
 
   // Code from course doesn't work
