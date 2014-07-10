@@ -26,6 +26,7 @@
         "webkitAudioContext",
         "requestAnimationFrame",
         "cancelAnimationFrame",
-        "Kinetic"
+        "Kinetic",
+        "createjs"
     ]
 }

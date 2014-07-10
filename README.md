@@ -100,6 +100,8 @@ therefore use a [polyfill](https://gist.github.com/paulirish/1579671)
 
 ## Frameworks
 
+### Kinetic
+
 [Kineticjs](http://kineticjs.com/) [Docs](http://kineticjs.com/docs/)
 
   ```bower install kineticjs```
@@ -117,6 +119,20 @@ Each layer represents two canvas elements, one for presenting content, and the o
 Give each shape an id so it can be referenced later.
 
 A Group acts like a container for display objects.
+
+### Easel
+
+[EaselJS](http://www.createjs.com/#!/EaselJS) is part of [CreateJS](http://www.createjs.com/#!/CreateJS). [Docs](http://www.createjs.com/Docs/EaselJS/modules/EaselJS.html)
+
+Extra features over Kinetic such as ability to create sprite sheets, movie clip, plugins.
+
+Shapes are in the [Graphics](http://www.createjs.com/Docs/EaselJS/classes/Graphics.html) class.
+
+Different hierarchy than Kinetic. Parent class is DisplayObject. Container acts as group.
+
+Stage can contain Container, Shape or Bitmaps. Containers can contain other containers, shapes or bitmaps.
+
+For animation, a global singleton Ticket class is used.
 
 
 ### Development
