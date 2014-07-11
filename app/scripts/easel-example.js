@@ -24,12 +24,37 @@
     rect.y = 100;
     rect.name = 'rect'; // give it a name so we can reference it for animation later
 
-    // add shapes to container
-    this.container.addChild(circle);
+    // can assign position to container - all contained shapes will be drawn relative to this
+    this.container.x = 100;
+
+    // add shapes to container - order matters, last one added will be on top
     this.container.addChild(rect);
+    this.container.addChild(circle);
 
     // update the stage
     this.stage.update();
+
+    // interaction - smart click, only fires on the shape object
+    // event object is a custom easel object,
+    // also exposes nativeEvent which is the native JavaScript mouse event
+    circle.addEventListener('click', function(e) {
+      console.log(e);
+    });
+
+    // animation
+    var self = this;
+    createjs.Ticker.addEventListener('tick', function(e) {
+      self.tick(e);
+    });
+  };
+
+  TP.tick = function(e) {
+    var rect = this.container.getChildByName('rect');
+    var newxpos = e.delta/1000*100;
+    console.log('newxpos: ' + newxpos);
+    rect.x = newxpos;
+    this.stage.update();
+    console.log('total time: ' + createjs.Ticker.getTime());
   };
 
   TP.init();
