@@ -27,6 +27,7 @@
         "requestAnimationFrame",
         "cancelAnimationFrame",
         "Kinetic",
-        "createjs"
+        "createjs",
+        "THREE"
     ]
 }

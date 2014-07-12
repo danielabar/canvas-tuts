@@ -182,7 +182,8 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/interaction.html',
         '<%= yeoman.app %>/interaction-bezier.html',
         '<%= yeoman.app %>/kinetic-example.html',
-        '<%= yeoman.app %>/easel-example.html'
+        '<%= yeoman.app %>/easel-example.html',
+        '<%= yeoman.app %>/threejs-example.html'
       ],
       options: {
         dest: '<%= yeoman.dist %>'

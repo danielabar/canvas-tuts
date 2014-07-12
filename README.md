@@ -134,6 +134,12 @@ Stage can contain Container, Shape or Bitmaps. Containers can contain other cont
 
 For animation, a global singleton Ticket class is used.
 
+### Three (3D canvas)
+
+Besides 2d context, there is also [WebGL](http://caniuse.com/webgl) for 3D.
+
+[Three.js](http://threejs.org/) makes use of WebGL, which supports hardware accelerated rendering. [Docs](http://threejs.org/docs/)
+
 
 ### Development
 
